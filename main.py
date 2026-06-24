@@ -22,8 +22,6 @@ class CarCreate(CarBase):
 class CarResponse(CarBase):
     id: int
 
-# --- ENDPOINT CRUD ---
-
 @app.post("/cars", response_model=CarResponse, status_code=status.HTTP_201_CREATED)
 def create_car(car: CarCreate):
     conn = get_db_connection()
